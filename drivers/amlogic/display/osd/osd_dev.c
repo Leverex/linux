@@ -217,9 +217,9 @@ int osddev_sync_request( struct fb_info * info,u32 xoffset, u32 yoffset,s32 in_f
 {
 	return osd_sync_request(info->node, info->var.yres,xoffset ,yoffset ,in_fence_fd);
 }
-int osddev_wait_for_vsync(void)
+void osddev_wait_for_vsync(void)
 {
-	return osd_wait_vsync_event();
+	return osd_wait_vsync_hw();
 }
 void osddev_get_osd_info(u32 index, s32 (*posdval)[4], u32 (*posdreg)[5], s32 info_flag)
 {
